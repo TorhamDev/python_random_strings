@@ -18,7 +18,7 @@ URL = "https://github.com/TorhamDev/python-random-strings"
 EMAIL = 'torhamdev@gmail.com'
 AUTHOR = 'Torham'
 REQUIRES_PYTHON = '>=3.6.0'
-VERSION = "1.0"
+VERSION = "0.2"
 KEYWORDS = ['python random strings', 'generate random string',
             'generate random digits', 'generate random hex digits',
             'generate random oct digits', 'generate random punctuation',
