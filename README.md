@@ -5,6 +5,12 @@
 > a python lib for generate random string and digits and special characters or A combination of them
 
 
+## installation 🛠
+
+```bash
+pip install python-random-strings
+```
+
 ## options 🖇
 1. Random Lower Case
 2. Random Upper Case
