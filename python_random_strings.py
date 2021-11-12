@@ -1,4 +1,11 @@
 from random import randint
+import logging
+
+## logger setup
+log_level = logging.INFO
+my_logger = logging
+my_logger.basicConfig(level=log_level)
+logger = my_logger.getLogger('python random strings')
 
 # Some strings for ctype-style character classification
 ascii_lowercase = 'abcdefghijklmnopqrstuvwxyz'
@@ -32,7 +39,7 @@ class random_strings():
                 selected.append(select)
         except Exception as ex:
             # return Error when length value not ivailable
-            print('ERROR: '+str(ex)+f'\n your enter value is "{length}" is a {type(length)}')
+            logger.error(str(ex)+f'\n your enter value is "{length}" is a {type(length)}')
         
         for char in selected:
             text_string += ascii_lowercase[char]
@@ -55,7 +62,7 @@ class random_strings():
                 selected.append(select)
         except Exception as ex:
             # return Error when length value not ivailable
-            print('ERROR: '+str(ex)+f'\n your enter value is "{length}" is a {type(length)}')
+            logger.error(str(ex)+f'\n your enter value is "{length}" is a {type(length)}')
         
         for char in selected:
             text_string += ascii_uppercase[char]
@@ -79,7 +86,7 @@ class random_strings():
                 selected.append(select)
         except Exception as ex:
             # return Error when length value not ivailable
-            print('ERROR: '+str(ex)+f'\n your enter value is "{length}" is a {type(length)}')
+            logger.error(str(ex)+f'\n your enter value is "{length}" is a {type(length)}')
         
         for char in selected:
             text_string += ascii_letters[char]
@@ -102,7 +109,7 @@ class random_strings():
                 selected.append(select)
         except Exception as ex:
             # return Error when length value not ivailable
-            print('ERROR: '+str(ex)+f'\n your enter value is "{length}" is a {type(length)}')
+            logger.error(str(ex)+f'\n your enter value is "{length}" is a {type(length)}')
         
         for char in selected:
             text_string += digits[char]
@@ -125,7 +132,7 @@ class random_strings():
 
         except Exception as ex:
             # return Error when length value not ivailable
-            print('ERROR: '+str(ex)+f'\n your enter value is "{length}" is a {type(length)}')
+            logger.error(str(ex)+f'\n your enter value is "{length}" is a {type(length)}')
         
         for char in selected:
 
@@ -148,7 +155,7 @@ class random_strings():
 
         except Exception as ex:
             # return Error when length value not ivailable
-            print('ERROR: '+str(ex)+f'\n your enter value is "{length}" is a {type(length)}')
+            logger.error(str(ex)+f'\n your enter value is "{length}" is a {type(length)}')
         
         for char in selected:
 
@@ -173,7 +180,7 @@ class random_strings():
 
         except Exception as ex:
             # return Error when length value not ivailable
-            print('ERROR: '+str(ex)+f'\n your enter value is "{length}" is a {type(length)}')
+            logger.error(str(ex)+f'\n your enter value is "{length}" is a {type(length)}')
         
         for char in selected:
 
@@ -197,7 +204,7 @@ class random_strings():
 
         except Exception as ex:
             # return Error when length value not ivailable
-            print('ERROR: '+str(ex)+f'\n your enter value is "{length}" is a {type(length)}')
+            logger.error(str(ex)+f'\n your enter value is "{length}" is a {type(length)}')
         
         for char in selected:
 
