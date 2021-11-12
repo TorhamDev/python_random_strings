@@ -5,7 +5,7 @@
 > a python lib for generate random string and digits and special characters or A combination of them
 
 
-## options 🪄
+## options 🖇
 1. Random Lower Case
 2. Random Upper Case
 3. Random Letters
