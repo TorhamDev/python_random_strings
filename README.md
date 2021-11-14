@@ -1,7 +1,8 @@
 # python random strings
-![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
+![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) [![Licence](https://img.shields.io/github/license/onionj/pybotnet?style=for-the-badge)](./LICENSE)
+
 <br>
-[![GitLicense](https://gitlicense.com/badge/TorhamDev/python_random_strings)](https://gitlicense.com/license/TorhamDev/gitlicense)
+
 > a python lib for generate random string and digits and special characters or A combination of them
 
 
