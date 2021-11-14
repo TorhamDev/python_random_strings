@@ -1,5 +1,5 @@
 # python random strings
-![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) [![Licence](https://img.shields.io/github/license/onionj/pybotnet?style=for-the-badge)](./LICENSE)
+![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) [![Licence](https://img.shields.io/github/license/TorhamDev/python_random_strings?style=for-the-badge)](./LICENSE)
 
 <br>
 
