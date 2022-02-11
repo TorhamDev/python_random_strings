@@ -40,7 +40,7 @@ class random_strings():
         selected = ''
         try:
             if length > len(ASCII_LOWERCASE):
-                while length > selected: # To avoid random.sample error
+                while length > len(selected): # To avoid random.sample error
                     selected += ASCII_LOWERCASE
 
                 return ''.join(random.sample(selected,length))
@@ -62,7 +62,7 @@ class random_strings():
         selected = ''
         try:
             if length > len(ASCII_UPPERCASE):
-                while length > selected: # To avoid random.sample error
+                while length > len(selected): # To avoid random.sample error
                     selected += ASCII_UPPERCASE
 
                 return ''.join(random.sample(selected,length))
@@ -83,9 +83,9 @@ class random_strings():
         """
         selected = ''
         try:
-            if length > len(ASCII_UPPERCASE): # To avoid random.sample error
-                while length > selected:
-                    selected += ASCII_UPPERCASE 
+            if length > len(ASCII_LETTERS): # To avoid random.sample error
+                while length > len(selected):
+                    selected += ASCII_LETTERS)
 
                 return ''.join(random.sample(selected,length))
             else:
@@ -105,8 +105,8 @@ class random_strings():
         """
         selected = ''
         try:
-            if length > DIGITS: # To avoid random.sample error
-                while length > selected:
+            if length > len(DIGITS): # To avoid random.sample error
+                while length > len(selected):
                     selected += DIGITS
 
                 return int(''.join(random.sample(selected,length)))
@@ -127,8 +127,8 @@ class random_strings():
         """
         selected = ''
         try:
-            if length > HEXDIGITS: # To avoid random.sample error
-                while length > selected:
+            if length > len(HEXDIGITS): # To avoid random.sample error
+                while length > len(selected):
                     selected += HEXDIGITS
 
                 return ''.join(random.sample(selected,length))
@@ -149,8 +149,8 @@ class random_strings():
         """
         selected = ''
         try:
-            if length > OCTDIGITS: # To avoid random.sample error
-                while length > selected:
+            if length > len(OCTDIGITS): # To avoid random.sample error
+                while length > len(selected):
                     selected += OCTDIGITS
 
                 return int(''.join(random.sample(selected,length)))
@@ -171,8 +171,8 @@ class random_strings():
         """
         selected = ''
         try:
-            if length > PUNCTUATION: # To avoid random.sample error
-                while length > selected:
+            if length > len(PUNCTUATION): # To avoid random.sample error
+                while length > len(selected):
                     selected += PUNCTUATION
 
                 return ''.join(random.sample(selected,length))
@@ -193,8 +193,8 @@ class random_strings():
         """
         selected = ''
         try:
-            if length > PRINTABLE: # To avoid random.sample error
-                while length > selected:
+            if length > len(PRINTABLE): # To avoid random.sample error
+                while length > len(selected):
                     selected += PRINTABLE
 
                 return ''.join(random.sample(selected,length))
@@ -216,13 +216,13 @@ class random_strings():
         
         selected = ''
         try:
-            if length > WHITESPACE: # To avoid random.sample error
-                while length > selected:
+            if length > len(WHITESPACE): # To avoid random.sample error
+                while length > len(selected):
                     selected += WHITESPACE
 
                 return ''.join(random.sample(selected,length))
             else:
                 return ''.join(random.sample(WHITESPACE,length))
         except Exception as e:
-            my_logger.error('length should be an int not an %s'%type(length))
+            my_logger.error(e)
             raise TypeError('length should be an int not an %s'%type(length))
