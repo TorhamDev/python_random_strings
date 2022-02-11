@@ -1,22 +1,25 @@
-from random import randint
+"""
+This module can help you generate random strings of any kind.
+"""
+import random
 import logging
+import string
 
-## logger setup
-log_level = logging.INFO
+# logger setup
+LOG_LEVEL = logging.INFO
 my_logger = logging
-my_logger.basicConfig(level=log_level)
+my_logger.basicConfig(level=LOG_LEVEL)
 logger = my_logger.getLogger('python random strings')
 
 # Some strings for ctype-style character classification
-ascii_lowercase = 'abcdefghijklmnopqrstuvwxyz'
-ascii_uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-ascii_letters = ascii_lowercase + ascii_uppercase
-digits = '0123456789'
-hexdigits = digits + 'abcdef' + 'ABCDEF'
-octdigits = '01234567'
-punctuation = r"""!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~"""
-printable = digits + ascii_letters + punctuation
-
+ASCII_LOWERCASE = string.ascii_lowercase
+ASCII_UPPERCASE = string.ascii_uppercase
+ASCII_LETTERS = string.ascii_letters
+DIGITS = string.digits
+HEXDIGITS = string.hexdigits
+OCTDIGITS = string.octdigits
+PUNCTUATION = string.punctuation
+PRINTABLE = DIGITS + ASCII_LETTERS + PUNCTUATION
 
 
 class random_strings():
@@ -24,190 +27,147 @@ class random_strings():
     return random strings with length optional.
     """
 
+    @staticmethod
     def random_lowercase(length):
         """
-        return random lower ascii case
+        return random lower-case ascii letters
         """
-
-        # text for return
-        text_string = ''
-        # for save numbers, for select chars
-        selected = []
+        selected = ''
         try:
-            for i in range(0,length):
-                select = randint(0,len(ascii_lowercase)-1)
-                selected.append(select)
-        except Exception as ex:
-            # return Error when length value not ivailable
-            logger.error(str(ex)+f'\n your enter value is "{length}" is a {type(length)}')
-        
-        for char in selected:
-            text_string += ascii_lowercase[char]
-        
-        return text_string
+            if length > len(ASCII_LOWERCASE):
+                while length > len(ASCII_LOWERCASE): # To avoid random.sample error
+                    selected += ASCII_LOWERCASE
 
+                return ''.join(random.sample(selected,length))
+            else:
+                return ''.join(random.sample(ASCII_LOWERCASE,length))
+        except Exception as e:
+            my_logger.error(e)
+            return e
 
-
+    @staticmethod  
     def random_uppercase(length):
         """
-        return random upper ascii case
+        return random upper-case ascii letters
         """
-        # text for return
-        text_string = ''
-        # for save numbers, for select chars
-        selected = []
+        selected = ''
         try:
-            for i in range(0,length):
-                select = randint(0,len(ascii_uppercase)-1)
-                selected.append(select)
-        except Exception as ex:
-            # return Error when length value not ivailable
-            logger.error(str(ex)+f'\n your enter value is "{length}" is a {type(length)}')
-        
-        for char in selected:
-            text_string += ascii_uppercase[char]
-        
-        return text_string
+            if length > len(ASCII_UPPERCASE):
+                while length > len(ASCII_UPPERCASE): # To avoid random.sample error
+                    selected += ASCII_UPPERCASE
 
+                return ''.join(random.sample(selected,length))
+            else:
+                return ''.join(random.sample(ASCII_UPPERCASE,length))
+        except Exception as e:
+            my_logger.error('length should be an int not an %s'%type(length))
+            raise TypeError('length should be an int not an %s'%type(length))
 
-
+    @staticmethod
     def random_letters(length):
         """
         return random latters ascii case
         """
-
-        # text for return
-        text_string = ''
-        # for save numbers, for select chars
-        selected = []
+        selected = ''
         try:
-            for i in range(0,length):
-                select = randint(0,len(ascii_letters)-1)
-                selected.append(select)
-        except Exception as ex:
-            # return Error when length value not ivailable
-            logger.error(str(ex)+f'\n your enter value is "{length}" is a {type(length)}')
-        
-        for char in selected:
-            text_string += ascii_letters[char]
-        
-        return text_string
+            if length > len(ASCII_UPPERCASE): # To avoid random.sample error
+                while length > len(ASCII_UPPERCASE):
+                    selected += ASCII_UPPERCASE 
 
+                return ''.join(random.sample(selected,length))
+            else:
+                return ''.join(random.sample(ASCII_LETTERS,length))
+        except Exception as e:
+            my_logger.error('length should be an int not an %s'%type(length))
+            raise TypeError('length should be an int not an %s'%type(length))
 
+    @staticmethod
     def random_digits(length):
         """
         return random digits
         """
-
-        # text for return
-        text_string = ''
-        # for save numbers, for select chars
-        selected = []
+        selected = ''
         try:
-            for i in range(0,length):
-                select = randint(0,len(digits)-1)
-                selected.append(select)
-        except Exception as ex:
-            # return Error when length value not ivailable
-            logger.error(str(ex)+f'\n your enter value is "{length}" is a {type(length)}')
-        
-        for char in selected:
-            text_string += digits[char]
-        
-        return text_string
+            if length > DIGITS: # To avoid random.sample error
+                while length > len(DIGITS):
+                    selected += DIGITS
 
+                return int(''.join(random.sample(selected,length)))
+            else:
+                return int(''.join(random.sample(DIGITS,length)))
+        except Exception as e:
+            my_logger.error('length should be an int not an %s'%type(length))
+            raise TypeError('length should be an int not an %s'%type(length))
+
+    @staticmethod
     def random_hexdigits(length):
         """
         return random hex digits
         """
-
-        # text for return
-        text_string = ''
-        # for save numbers, for select chars
-        selected = []
+        selected = ''
         try:
-            for i in range(0,length):
-                select = randint(0,len(hexdigits)-1)
-                selected.append(select)
+            if length > HEXDIGITS: # To avoid random.sample error
+                while length > len(HEXDIGITS):
+                    selected += HEXDIGITS
 
-        except Exception as ex:
-            # return Error when length value not ivailable
-            logger.error(str(ex)+f'\n your enter value is "{length}" is a {type(length)}')
-        
-        for char in selected:
+                return ''.join(random.sample(selected,length))
+            else:
+                return ''.join(random.sample(HEXDIGITS,length))
+        except Exception as e:
+            my_logger.error('length should be an int not an %s'%type(length))
+            raise TypeError('length should be an int not an %s'%type(length))
 
-            text_string += hexdigits[char]
-        
-        return text_string
-
+    @staticmethod
     def random_octdigits(length):
         """
         return random octal digits
         """
-        # text for return
-        text_string = ''
-        # for save numbers, for select chars
-        selected = []
+        selected = ''
         try:
-            for i in range(0,length):
-                select = randint(0,len(octdigits)-1)
-                selected.append(select)
+            if length > OCTDIGITS: # To avoid random.sample error
+                while length > len(OCTDIGITS):
+                    selected += OCTDIGITS
 
-        except Exception as ex:
-            # return Error when length value not ivailable
-            logger.error(str(ex)+f'\n your enter value is "{length}" is a {type(length)}')
-        
-        for char in selected:
+                return int(''.join(random.sample(selected,length)))
+            else:
+                return int(''.join(random.sample(OCTDIGITS,length)))
+        except Exception as e:
+            my_logger.error('length should be an int not an %s'%type(length))
+            raise TypeError('length should be an int not an %s'%type(length))
 
-            text_string += octdigits[char]
-        
-        return text_string
-    
-
+    @staticmethod
     def random_punctuation(length):
         """
         return random punctuation string
         """
-
-        # text for return
-        text_string = ''
-        # for save numbers, for select chars
-        selected = []
+        selected = ''
         try:
-            for i in range(0,length):
-                select = randint(0,len(punctuation)-1)
-                selected.append(select)
+            if length > PUNCTUATION: # To avoid random.sample error
+                while length > len(PUNCTUATION):
+                    selected += PUNCTUATION
 
-        except Exception as ex:
-            # return Error when length value not ivailable
-            logger.error(str(ex)+f'\n your enter value is "{length}" is a {type(length)}')
-        
-        for char in selected:
+                return ''.join(random.sample(selected,length))
+            else:
+                return ''.join(random.sample(PUNCTUATION,length))
+        except Exception as e:
+            my_logger.error('length should be an int not an %s'%type(length))
+            raise TypeError('length should be an int not an %s'%type(length))
 
-            text_string += punctuation[char]
-        
-        return text_string
-
-
+    @staticmethod
     def random_printable(length):
         """
         return random printable string
         """
-        # text for return
-        text_string = ''
-        # for save numbers, for select chars
-        selected = []
+        
+        selected = ''
         try:
-            for i in range(0,length):
-                select = randint(0,len(printable)-1)
-                selected.append(select)
+            if length > PRINTABLE: # To avoid random.sample error
+                while length > len(PRINTABLE):
+                    selected += PRINTABLE
 
-        except Exception as ex:
-            # return Error when length value not ivailable
-            logger.error(str(ex)+f'\n your enter value is "{length}" is a {type(length)}')
-        
-        for char in selected:
-
-            text_string += printable[char]
-        
-        return text_string
+                return ''.join(random.sample(selected,length))
+            else:
+                return ''.join(random.sample(PRINTABLE,length))
+        except Exception as e:
+            my_logger.error('length should be an int not an %s'%type(length))
+            raise TypeError('length should be an int not an %s'%type(length))
