@@ -85,7 +85,7 @@ class random_strings():
         try:
             if length > len(ASCII_LETTERS): # To avoid random.sample error
                 while length > len(selected):
-                    selected += ASCII_LETTERS)
+                    selected += ASCII_LETTERS
 
                 return ''.join(random.sample(selected,length))
             else:
