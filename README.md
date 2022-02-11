@@ -3,7 +3,7 @@
 
 <br>
 
-> a python lib for generate random string and digits and special characters or A combination of them
+> a python library to generate random strings and digits and special characters or a combination of them
 
 
 ## installation 🛠
@@ -21,6 +21,7 @@ pip install python-random-strings
 6. Random Oct Digits
 7. Random Punctuation
 8. Random Printable
+9. Random Whitespace
 
 
 ## Sample Code ✏️
@@ -31,38 +32,37 @@ from python_random_strings import random_strings
 
 a = random_strings.random_lowercase(6)
 print(a)
+output => hueioj
 
 a = random_strings.random_uppercase(6)
 print(a)
+output => GAVKDF
 
 a = random_strings.random_letters(6)
 print(a)
+output => rENOtb
 
 a = random_strings.random_digits(6)
 print(a)
+output => 653665
 
 a = random_strings.random_hexdigits(6)
 print(a)
+output => c25Ba6
 
 a = random_strings.random_octdigits(6)
 print(a)
+output => 540322
 
 a = random_strings.random_punctuation(6)
 print(a)
+output => "=*$^<
 
 a = random_strings.random_printable(6)
 print(a)
+output => )|~6yZ
 
-```
-## sample output 📜
-```bash
-hueioj
-GAVKDF
-rENOtb
-653665
-c25Ba6
-540322
-"=*$^<
-)|~6yZ
-
+a = random_strings.random_whitespace(6)
+print(a)
+output => \t\n\r\t\n\x0c
 ```
