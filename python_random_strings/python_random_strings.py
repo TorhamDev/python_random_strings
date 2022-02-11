@@ -25,13 +25,17 @@ WHITESPACE = string.whitespace
 
 class random_strings():
     """
-    return random strings with length optional.
+    return random strings with optional length.
     """
 
     @staticmethod
     def random_lowercase(length:int=1):
         """
-        return random lower-case ascii letters
+        Returns random lower-case ascii letters.
+        Args:
+            length(int): desired length to generate random strings.
+        Returns:
+            str: Randomly generated lower-case ascii letters
         """
         selected = ''
         try:
@@ -49,7 +53,11 @@ class random_strings():
     @staticmethod  
     def random_uppercase(length:int=1):
         """
-        return random upper-case ascii letters
+        Returns random upper-case ascii letters.
+        Args:
+            length(int): desired length to generate random strings.
+        Returns:
+            str: Randomly generated upper-case ascii letters
         """
         selected = ''
         try:
@@ -67,7 +75,11 @@ class random_strings():
     @staticmethod
     def random_letters(length:int=1):
         """
-        return random latters ascii case
+        Returns random ascii letters.
+        Args:
+            length(int): desired length to generate random strings.
+        Returns:
+            str: Randomly generated ascii letters
         """
         selected = ''
         try:
@@ -85,7 +97,11 @@ class random_strings():
     @staticmethod
     def random_digits(length:int=1):
         """
-        return random digits
+        Returns random digits.
+        Args:
+            length(int): desired length to generate random digits.
+        Returns:
+            int: Randomly generated digits.
         """
         selected = ''
         try:
@@ -103,7 +119,11 @@ class random_strings():
     @staticmethod
     def random_hexdigits(length:int=1):
         """
-        return random hex digits
+        Returns random hexdigits.
+        Args:
+            length(int): desired length to generate random hexdigits.
+        Returns:
+            str: Randomly generated hexdigits.
         """
         selected = ''
         try:
@@ -121,7 +141,11 @@ class random_strings():
     @staticmethod
     def random_octdigits(length:int=1):
         """
-        return random octal digits
+        Returns random octdigits.
+        Args:
+            length(int): desired length to generate random octdigits.
+        Returns:
+            int: Randomly generated octdigits.
         """
         selected = ''
         try:
@@ -139,7 +163,11 @@ class random_strings():
     @staticmethod
     def random_punctuation(length:int=1):
         """
-        return random punctuation string
+        Returns random punctuation.
+        Args:
+            length(int): desired length to generate random punctuation.
+        Returns:
+            str: Randomly generated punctuation.
         """
         selected = ''
         try:
@@ -157,9 +185,12 @@ class random_strings():
     @staticmethod
     def random_printable(length:int=1):
         """
-        return random printable string
+        Returns random printable chars.
+        Args:
+            length(int): desired length to generate random letters.
+        Returns:
+            str: Randomly generated printable letters.
         """
-        
         selected = ''
         try:
             if length > PRINTABLE: # To avoid random.sample error
@@ -176,7 +207,11 @@ class random_strings():
     @staticmethod
     def random_whitespace(length:int=1):
         """
-        return random whitespace
+        Returns random whitespace.
+        Args:
+            length(int): desired length to generate random whitespace.
+        Returns:
+            str: Randomly generated whitespace.
         """
         
         selected = ''
