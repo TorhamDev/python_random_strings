@@ -20,6 +20,7 @@ HEXDIGITS = string.hexdigits
 OCTDIGITS = string.octdigits
 PUNCTUATION = string.punctuation
 PRINTABLE = DIGITS + ASCII_LETTERS + PUNCTUATION
+WHITESPACE = string.whitespace
 
 
 class random_strings():
@@ -28,7 +29,7 @@ class random_strings():
     """
 
     @staticmethod
-    def random_lowercase(length):
+    def random_lowercase(length:int=1):
         """
         return random lower-case ascii letters
         """
@@ -46,7 +47,7 @@ class random_strings():
             return e
 
     @staticmethod  
-    def random_uppercase(length):
+    def random_uppercase(length:int=1):
         """
         return random upper-case ascii letters
         """
@@ -64,7 +65,7 @@ class random_strings():
             raise TypeError('length should be an int not an %s'%type(length))
 
     @staticmethod
-    def random_letters(length):
+    def random_letters(length:int=1):
         """
         return random latters ascii case
         """
@@ -82,7 +83,7 @@ class random_strings():
             raise TypeError('length should be an int not an %s'%type(length))
 
     @staticmethod
-    def random_digits(length):
+    def random_digits(length:int=1):
         """
         return random digits
         """
@@ -100,7 +101,7 @@ class random_strings():
             raise TypeError('length should be an int not an %s'%type(length))
 
     @staticmethod
-    def random_hexdigits(length):
+    def random_hexdigits(length:int=1):
         """
         return random hex digits
         """
@@ -118,7 +119,7 @@ class random_strings():
             raise TypeError('length should be an int not an %s'%type(length))
 
     @staticmethod
-    def random_octdigits(length):
+    def random_octdigits(length:int=1):
         """
         return random octal digits
         """
@@ -136,7 +137,7 @@ class random_strings():
             raise TypeError('length should be an int not an %s'%type(length))
 
     @staticmethod
-    def random_punctuation(length):
+    def random_punctuation(length:int=1):
         """
         return random punctuation string
         """
@@ -154,7 +155,7 @@ class random_strings():
             raise TypeError('length should be an int not an %s'%type(length))
 
     @staticmethod
-    def random_printable(length):
+    def random_printable(length:int=1):
         """
         return random printable string
         """
@@ -168,6 +169,25 @@ class random_strings():
                 return ''.join(random.sample(selected,length))
             else:
                 return ''.join(random.sample(PRINTABLE,length))
+        except Exception as e:
+            my_logger.error('length should be an int not an %s'%type(length))
+            raise TypeError('length should be an int not an %s'%type(length))
+
+    @staticmethod
+    def random_whitespace(length:int=1):
+        """
+        return random whitespace
+        """
+        
+        selected = ''
+        try:
+            if length > WHITESPACE: # To avoid random.sample error
+                while length > len(WHITESPACE):
+                    selected += WHITESPACE
+
+                return ''.join(random.sample(selected,length))
+            else:
+                return ''.join(random.sample(WHITESPACE,length))
         except Exception as e:
             my_logger.error('length should be an int not an %s'%type(length))
             raise TypeError('length should be an int not an %s'%type(length))
