@@ -72,7 +72,7 @@ def test_random_hexdigits():
         data = random_strings.random_hexdigits(i)
         my_logger.info('Generated data %s'%data)
 
-        assert isinstance(data,int)
+        assert isinstance(data,str)
         my_logger.info('Passed')
 
 def test_random_octdigits():
