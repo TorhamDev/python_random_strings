@@ -18,14 +18,12 @@ URL = "https://github.com/TorhamDev/python-random-strings"
 EMAIL = 'torhamdev@gmail.com'
 AUTHOR = 'Torham'
 REQUIRES_PYTHON = '>=3.6.0'
-VERSION = "0.2"
+VERSION = "0.3"
 KEYWORDS = ['python random strings', 'generate random string',
             'generate random digits', 'generate random hex digits',
             'generate random oct digits', 'generate random punctuation',
             'generate random printable', 'generate random lower case',
             'generate random upper case', 'generate random letters']
-
-
 
 
 # What packages are optional?

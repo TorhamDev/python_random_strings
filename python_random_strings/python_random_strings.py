@@ -29,7 +29,7 @@ class random_strings():
     """
 
     @staticmethod
-    def random_lowercase(length:int=1):
+    def random_lowercase(length: int = 1):
         """
         Returns random lower-case ascii letters.
         Args:
@@ -40,18 +40,18 @@ class random_strings():
         selected = ''
         try:
             if length > len(ASCII_LOWERCASE):
-                while length > len(selected): # To avoid random.sample error
+                while length > len(selected):  # To avoid random.sample error
                     selected += ASCII_LOWERCASE
 
-                return ''.join(random.sample(selected,length))
+                return ''.join(random.sample(selected, length))
             else:
-                return ''.join(random.sample(ASCII_LOWERCASE,length))
+                return ''.join(random.sample(ASCII_LOWERCASE, length))
         except Exception as e:
             my_logger.error(e)
             return e
 
-    @staticmethod  
-    def random_uppercase(length:int=1):
+    @staticmethod
+    def random_uppercase(length: int = 1):
         """
         Returns random upper-case ascii letters.
         Args:
@@ -62,18 +62,18 @@ class random_strings():
         selected = ''
         try:
             if length > len(ASCII_UPPERCASE):
-                while length > len(selected): # To avoid random.sample error
+                while length > len(selected):  # To avoid random.sample error
                     selected += ASCII_UPPERCASE
 
-                return ''.join(random.sample(selected,length))
+                return ''.join(random.sample(selected, length))
             else:
-                return ''.join(random.sample(ASCII_UPPERCASE,length))
+                return ''.join(random.sample(ASCII_UPPERCASE, length))
         except Exception as e:
-            my_logger.error('length should be an int not an %s'%type(length))
-            raise TypeError('length should be an int not an %s'%type(length))
+            my_logger.error('length should be an int not an %s' % type(length))
+            raise TypeError('length should be an int not an %s' % type(length))
 
     @staticmethod
-    def random_letters(length:int=1):
+    def random_letters(length: int = 1):
         """
         Returns random ascii letters.
         Args:
@@ -83,19 +83,19 @@ class random_strings():
         """
         selected = ''
         try:
-            if length > len(ASCII_LETTERS): # To avoid random.sample error
+            if length > len(ASCII_LETTERS):  # To avoid random.sample error
                 while length > len(selected):
                     selected += ASCII_LETTERS
 
-                return ''.join(random.sample(selected,length))
+                return ''.join(random.sample(selected, length))
             else:
-                return ''.join(random.sample(ASCII_LETTERS,length))
+                return ''.join(random.sample(ASCII_LETTERS, length))
         except Exception as e:
-            my_logger.error('length should be an int not an %s'%type(length))
-            raise TypeError('length should be an int not an %s'%type(length))
+            my_logger.error('length should be an int not an %s' % type(length))
+            raise TypeError('length should be an int not an %s' % type(length))
 
     @staticmethod
-    def random_digits(length:int=1):
+    def random_digits(length: int = 1):
         """
         Returns random digits.
         Args:
@@ -105,19 +105,19 @@ class random_strings():
         """
         selected = ''
         try:
-            if length > len(DIGITS): # To avoid random.sample error
+            if length > len(DIGITS):  # To avoid random.sample error
                 while length > len(selected):
                     selected += DIGITS
 
-                return int(''.join(random.sample(selected,length)))
+                return int(''.join(random.sample(selected, length)))
             else:
-                return int(''.join(random.sample(DIGITS,length)))
+                return int(''.join(random.sample(DIGITS, length)))
         except Exception as e:
-            my_logger.error('length should be an int not an %s'%type(length))
-            raise TypeError('length should be an int not an %s'%type(length))
+            my_logger.error('length should be an int not an %s' % type(length))
+            raise TypeError('length should be an int not an %s' % type(length))
 
     @staticmethod
-    def random_hexdigits(length:int=1):
+    def random_hexdigits(length: int = 1):
         """
         Returns random hexdigits.
         Args:
@@ -127,19 +127,19 @@ class random_strings():
         """
         selected = ''
         try:
-            if length > len(HEXDIGITS): # To avoid random.sample error
+            if length > len(HEXDIGITS):  # To avoid random.sample error
                 while length > len(selected):
                     selected += HEXDIGITS
 
-                return ''.join(random.sample(selected,length))
+                return ''.join(random.sample(selected, length))
             else:
-                return ''.join(random.sample(HEXDIGITS,length))
+                return ''.join(random.sample(HEXDIGITS, length))
         except Exception as e:
-            my_logger.error('length should be an int not an %s'%type(length))
-            raise TypeError('length should be an int not an %s'%type(length))
+            my_logger.error('length should be an int not an %s' % type(length))
+            raise TypeError('length should be an int not an %s' % type(length))
 
     @staticmethod
-    def random_octdigits(length:int=1):
+    def random_octdigits(length: int = 1):
         """
         Returns random octdigits.
         Args:
@@ -149,19 +149,19 @@ class random_strings():
         """
         selected = ''
         try:
-            if length > len(OCTDIGITS): # To avoid random.sample error
+            if length > len(OCTDIGITS):  # To avoid random.sample error
                 while length > len(selected):
                     selected += OCTDIGITS
 
-                return int(''.join(random.sample(selected,length)))
+                return int(''.join(random.sample(selected, length)))
             else:
-                return int(''.join(random.sample(OCTDIGITS,length)))
+                return int(''.join(random.sample(OCTDIGITS, length)))
         except Exception as e:
-            my_logger.error('length should be an int not an %s'%type(length))
-            raise TypeError('length should be an int not an %s'%type(length))
+            my_logger.error('length should be an int not an %s' % type(length))
+            raise TypeError('length should be an int not an %s' % type(length))
 
     @staticmethod
-    def random_punctuation(length:int=1):
+    def random_punctuation(length: int = 1):
         """
         Returns random punctuation.
         Args:
@@ -171,19 +171,19 @@ class random_strings():
         """
         selected = ''
         try:
-            if length > len(PUNCTUATION): # To avoid random.sample error
+            if length > len(PUNCTUATION):  # To avoid random.sample error
                 while length > len(selected):
                     selected += PUNCTUATION
 
-                return ''.join(random.sample(selected,length))
+                return ''.join(random.sample(selected, length))
             else:
-                return ''.join(random.sample(PUNCTUATION,length))
+                return ''.join(random.sample(PUNCTUATION, length))
         except Exception as e:
-            my_logger.error('length should be an int not an %s'%type(length))
-            raise TypeError('length should be an int not an %s'%type(length))
+            my_logger.error('length should be an int not an %s' % type(length))
+            raise TypeError('length should be an int not an %s' % type(length))
 
     @staticmethod
-    def random_printable(length:int=1):
+    def random_printable(length: int = 1):
         """
         Returns random printable chars.
         Args:
@@ -193,19 +193,19 @@ class random_strings():
         """
         selected = ''
         try:
-            if length > len(PRINTABLE): # To avoid random.sample error
+            if length > len(PRINTABLE):  # To avoid random.sample error
                 while length > len(selected):
                     selected += PRINTABLE
 
-                return ''.join(random.sample(selected,length))
+                return ''.join(random.sample(selected, length))
             else:
-                return ''.join(random.sample(PRINTABLE,length))
+                return ''.join(random.sample(PRINTABLE, length))
         except Exception as e:
-            my_logger.error('length should be an int not an %s'%type(length))
-            raise TypeError('length should be an int not an %s'%type(length))
+            my_logger.error('length should be an int not an %s' % type(length))
+            raise TypeError('length should be an int not an %s' % type(length))
 
     @staticmethod
-    def random_whitespace(length:int=1):
+    def random_whitespace(length: int = 1):
         """
         Returns random whitespace.
         Args:
@@ -213,16 +213,16 @@ class random_strings():
         Returns:
             str: Randomly generated whitespace.
         """
-        
+
         selected = ''
         try:
-            if length > len(WHITESPACE): # To avoid random.sample error
+            if length > len(WHITESPACE):  # To avoid random.sample error
                 while length > len(selected):
                     selected += WHITESPACE
 
-                return ''.join(random.sample(selected,length))
+                return ''.join(random.sample(selected, length))
             else:
-                return ''.join(random.sample(WHITESPACE,length))
+                return ''.join(random.sample(WHITESPACE, length))
         except Exception as e:
             my_logger.error(e)
-            raise TypeError('length should be an int not an %s'%type(length))
+            raise TypeError('length should be an int not an %s' % type(length))
